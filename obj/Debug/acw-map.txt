@@ -2,14 +2,6 @@ Inbanker.Droid.MainActivity, Inbanker.Droid;md516c583ffa1f4ea4a7c41dc8a3b83a978.
 Inbanker.Droid.MainActivity, Inbanker.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md516c583ffa1f4ea4a7c41dc8a3b83a978.MainActivity
 Inbanker.Droid.MainActivity;md516c583ffa1f4ea4a7c41dc8a3b83a978.MainActivity
 inbanker.droid.MainActivity;md516c583ffa1f4ea4a7c41dc8a3b83a978.MainActivity
-Inbanker.Droid.RegistrationIntentService, Inbanker.Droid;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
-Inbanker.Droid.RegistrationIntentService, Inbanker.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
-Inbanker.Droid.RegistrationIntentService;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
-inbanker.droid.RegistrationIntentService;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
-Inbanker.Droid.MyGcmListenerService, Inbanker.Droid;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
-Inbanker.Droid.MyGcmListenerService, Inbanker.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
-Inbanker.Droid.MyGcmListenerService;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
-inbanker.droid.MyGcmListenerService;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
 Inbanker.Droid.LoginPageRenderer, Inbanker.Droid;md516c583ffa1f4ea4a7c41dc8a3b83a978.LoginPageRenderer
 Inbanker.Droid.LoginPageRenderer, Inbanker.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md516c583ffa1f4ea4a7c41dc8a3b83a978.LoginPageRenderer
 Inbanker.Droid.LoginPageRenderer;md516c583ffa1f4ea4a7c41dc8a3b83a978.LoginPageRenderer
@@ -18,6 +10,14 @@ Inbanker.Droid.RedirectLoginPageRenderer, Inbanker.Droid;md516c583ffa1f4ea4a7c41
 Inbanker.Droid.RedirectLoginPageRenderer, Inbanker.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md516c583ffa1f4ea4a7c41dc8a3b83a978.RedirectLoginPageRenderer
 Inbanker.Droid.RedirectLoginPageRenderer;md516c583ffa1f4ea4a7c41dc8a3b83a978.RedirectLoginPageRenderer
 inbanker.droid.RedirectLoginPageRenderer;md516c583ffa1f4ea4a7c41dc8a3b83a978.RedirectLoginPageRenderer
+Inbanker.Droid.MyGcmListenerService, Inbanker.Droid;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
+Inbanker.Droid.MyGcmListenerService, Inbanker.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
+Inbanker.Droid.MyGcmListenerService;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
+inbanker.droid.MyGcmListenerService;md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService
+Inbanker.Droid.RegistrationIntentService, Inbanker.Droid;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
+Inbanker.Droid.RegistrationIntentService, Inbanker.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
+Inbanker.Droid.RegistrationIntentService;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
+inbanker.droid.RegistrationIntentService;md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService
 Android.Support.V4.View.ViewPager/IOnPageChangeListenerImplementor, Xamarin.Android.Support.v4;mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor
 Android.Support.V4.View.ViewPager+IOnPageChangeListenerImplementor, Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor
 Android.Support.V4.View.ViewPager.IOnPageChangeListenerImplementor;mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor

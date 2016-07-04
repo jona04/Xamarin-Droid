@@ -25,13 +25,6 @@ namespace Inbanker.Droid
 
 			if (tipo.Equals("resposta_pedido"))
 			{
-
-				//var trans_valor = data.GetString("trans_valor");
-				//var trans_vencimento = data.GetString("trans_vencimento");
-				//var trans_data = data.GetString("trans_data");
-				//var nome_user = data.GetString("nome_user");
-				//var trans_id_user2 = data.GetString("trans_id_user2");
-				//var trans_resposta_pedido = data.GetString("trans_resposta_pedido");
 				//var trans_dias = data.GetString("trans_dias");
 
 				var transacao = data.GetString("transacao");

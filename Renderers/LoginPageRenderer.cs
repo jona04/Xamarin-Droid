@@ -99,9 +99,19 @@ namespace Inbanker.Droid
 
 						string token_gcm = prefs.GetString("token_gcm", "");
 
-						//fazemos verificaçao do play service e registro do GCM
+						//fazemos verificaçao do play service para registro do GCM
 						VerifyPlayServices verify = new VerifyPlayServices();
-						verify.IsPlayServicesAvailable();
+						if (verify.IsPlayServicesAvailable().Equals(true))
+						{
+							var intent = new Intent(Forms.Context, typeof(RegistrationIntentService));
+							Forms.Context.StartService(intent);
+
+
+							//string token = prefs.GetString("token_gcm", "");
+
+							//ChamaWebService(id, nome, token, picture_url);
+
+						}
 
 						////friends.
 						//await App.NavigateToLista(eu, usu);
@@ -124,6 +134,16 @@ namespace Inbanker.Droid
 			}
 
 
+		}
+
+		public async void ChamaWebService(string id, string nome, string token, string img)
+		{
+			ServiceWrapper serviceWrapper = new ServiceWrapper();
+
+			//var result = await serviceWrapper.GetData("test");
+			var result = await serviceWrapper.RegisterUserFormRequest(id, nome, token, img);
+			Log.Debug("RegistrationIntentService", id + " - " + nome + " - " + token);
+			Log.Debug("RegistrationIntentService", result);
 		}
 	}
 }

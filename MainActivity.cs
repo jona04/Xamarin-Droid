@@ -27,31 +27,33 @@ namespace Inbanker.Droid
 
 			string notification = this.Intent.GetStringExtra("notification");
 
-			LoadApplication(new App());
+			//LoadApplication(new App());
 
 			////recebe parametros vindo da notificacao
-			//if (notification == null)
-			//{
-			//	LoadApplication(new App("false",null));
-			//}
-			//else 
-			//{ 
-			//	if (notification.Equals("receber_pedido"))
-			//	{
-			//		string transacao = this.Intent.GetStringExtra("transacao");
-			//		var trans = JsonConvert.DeserializeObject<Transacao>(transacao);
+			if (notification == null)
+			{
+				LoadApplication(new App("false",null));
+			}
+			else 
+			{ 
+				if (notification.Equals("receber_pedido"))
+				{
+					string transacao = this.Intent.GetStringExtra("transacao");
+					var trans = JsonConvert.DeserializeObject<Transacao>(transacao);
 
-			//		LoadApplication(new App(notification,trans));
-			//	}
-			//	else
-			//	{
-			//		string transacao = this.Intent.GetStringExtra("transacao");
-			//		var trans = JsonConvert.DeserializeObject<Transacao>(transacao);
+					LoadApplication(new App(notification,trans));
+					//App.Current.MainPage = new VerPedidoRecebido(trans);
+				}
+				else
+				{
+					string transacao = this.Intent.GetStringExtra("transacao");
+					var trans = JsonConvert.DeserializeObject<Transacao>(transacao);
 
-			//		LoadApplication(new App(notification, trans));
+					LoadApplication(new App(notification, trans));
+					//App.Current.MainPage = new VerPedidosEnviados(trans);
 
-			//	}
-			//}
+				}
+			}
 				
 		}
 	}

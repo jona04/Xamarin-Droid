@@ -56,7 +56,8 @@ namespace Inbanker.Droid
 			string nome = prefs.GetString("usu_nome", "");
 			string usu_img = prefs.GetString("usu_picture", "");
 
-			ChamaWebService(id, nome, token,usu_img);
+			ChamaWebService(id, nome, token, usu_img);
+
 		}
 
 		void Subscribe(string token)

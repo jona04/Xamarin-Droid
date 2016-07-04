@@ -24,12 +24,12 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <service android:exported="false" android:name="md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService" />
     <service android:exported="false" android:name="md516c583ffa1f4ea4a7c41dc8a3b83a978.MyGcmListenerService">
       <intent-filter>
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />
       </intent-filter>
     </service>
+    <service android:exported="false" android:name="md516c583ffa1f4ea4a7c41dc8a3b83a978.RegistrationIntentService" />
     <activity android:label="Web Authenticator" android:name="md550f8a10a740eb4fb6376baab8337ce22.FormAuthenticatorActivity" />
     <activity android:label="Web Authenticator" android:name="md550f8a10a740eb4fb6376baab8337ce22.WebAuthenticatorActivity" />
     <provider android:authorities="br.com.inbanker.inbanker.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider" />

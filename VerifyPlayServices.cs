@@ -41,9 +41,6 @@ namespace Inbanker.Droid
 			{
 				Log.Info("Retorno PlayService", "True");
 
-				var intent = new Intent(Forms.Context, typeof(RegistrationIntentService));
-				Forms.Context.StartService(intent);
-
 				return true;
 			}
 		}
