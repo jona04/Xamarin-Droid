@@ -27,6 +27,8 @@ namespace Inbanker.Droid
 		public static void UpdateIdValues()
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Inbanker.Droid.Resource.Attribute.actionBarSize;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::Inbanker.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::Inbanker.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -2713,6 +2715,12 @@ namespace Inbanker.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f060037
+			public const int ApplicationName = 2131099703;
+			
+			// aapt resource value: 0x7f060036
+			public const int Hello = 2131099702;
 			
 			// aapt resource value: 0x7f060022
 			public const int abc_action_bar_home_description = 2131099682;

@@ -24,6 +24,9 @@ namespace Inbanker.Droid
 		Account facebook;
 
 		Usuario eu;
+		AcessoDadosUsuario dadosUsuario;
+		AmigosSQLite amigos;
+		AcessoDadosAmigos dadosAmigos;
 
 		bool done = false;
 
@@ -37,10 +40,10 @@ namespace Inbanker.Droid
 				// this is a ViewGroup - so should be able to load an AXML file and FindView<>
 				var activity = this.Context as Activity;
 				var auth = new OAuth2Authenticator(
-					clientId: App.Current.Properties["clientId"].ToString(), // your OAuth2 client id
-					scope: App.Current.Properties["scope"].ToString(), // the scopes for the particular API you're accessing, delimited by "+" symbols
-					authorizeUrl: new Uri(App.Current.Properties["authorizeUrl"].ToString()),
-					redirectUrl: new Uri(App.Current.Properties["redirectUrl"].ToString()));
+					clientId: Xamarin.Forms.Application.Current.Properties["clientId"].ToString(), // your OAuth2 client id
+					scope: Xamarin.Forms.Application.Current.Properties["scope"].ToString(), // the scopes for the particular API you're accessing, delimited by "+" symbols
+					authorizeUrl: new Uri(Xamarin.Forms.Application.Current.Properties["authorizeUrl"].ToString()),
+					redirectUrl: new Uri(Xamarin.Forms.Application.Current.Properties["redirectUrl"].ToString()));
 
 
 
@@ -78,15 +81,35 @@ namespace Inbanker.Droid
 						var obj_picture2 = JObject.Parse(picture_data);
 						var picture_url = obj_picture2["url"].ToString();
 
-						////adicionamos os dados do usuario recem logado no objeto
+						//adicionamos os dados do usuario recem logado no objeto
 						eu = new Usuario
 						{
 							id_usuario = id,
+							access_token = eventArgs.Account.Properties["access_token"],
 							nome_usuario = nome,
 							url_img = picture_url,
 						};
 
+						//adcionamos os dados do usuario no sqlite
+						dadosUsuario = new AcessoDadosUsuario();
+						dadosUsuario.InsertUsuario(eu);
+						
+
 						var usu = JsonConvert.DeserializeObject<List<Amigos>>(lista_friends);
+
+						//adicionamos os dados dos amigos ao sqlite
+						dadosAmigos = new AcessoDadosAmigos();
+						foreach (var usuarios in usu)
+						{
+							amigos = new AmigosSQLite
+							{
+								id = usuarios.id,
+								name = usuarios.name,
+								url_picture = usuarios.picture.data.url,
+							};
+
+							dadosAmigos.InsertAmigos(amigos);
+						}
 
 						ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Forms.Context);
 						ISharedPreferencesEditor editor = prefs.Edit();
@@ -116,14 +139,19 @@ namespace Inbanker.Droid
 						////friends.
 						//await App.NavigateToLista(eu, usu);
 
-						App.Current.MainPage = new MainPageCS(eu, usu);
-						App.Current.Properties["access_token"] = eventArgs.Account.Properties["access_token"].ToString();
+						//Xamarin.Forms.Application.Current.Properties["access_token"] = eventArgs.Account.Properties["access_token"].ToString();
+
+						Xamarin.Forms.Application.Current.MainPage = new MainPageCS(eu, usu,new InicioPage(eu, usu));
+
 					}
 					else
 					{
 						// Auth failed - The only way to get to this branch on Google is to hit the 'Cancel' button.
-						App.Current.MainPage = new LoginPage();
-						App.Current.Properties["access_token"] = "";
+						//Xamarin.Forms.Application.Current.Properties["access_token"] = "";
+						eu.access_token = "";
+						dadosUsuario.UpdateUsuario(eu);
+						Xamarin.Forms.Application.Current.MainPage = new LoginPage();
+
 					}
 				};
 
@@ -134,16 +162,6 @@ namespace Inbanker.Droid
 			}
 
 
-		}
-
-		public async void ChamaWebService(string id, string nome, string token, string img)
-		{
-			ServiceWrapper serviceWrapper = new ServiceWrapper();
-
-			//var result = await serviceWrapper.GetData("test");
-			var result = await serviceWrapper.RegisterUserFormRequest(id, nome, token, img);
-			Log.Debug("RegistrationIntentService", id + " - " + nome + " - " + token);
-			Log.Debug("RegistrationIntentService", result);
 		}
 	}
 }

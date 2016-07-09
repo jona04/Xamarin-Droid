@@ -100,10 +100,8 @@ namespace Inbanker.Droid
 			//VerifyPlayServices verify = new VerifyPlayServices();
 			//verify.IsPlayServicesAvailable ();
 
-
-			App.Current.MainPage = new MainPageCS(eu, usu);
-			App.Current.Properties["access_token"] = facebook.Properties["access_token"];
-
+			//App.Current.Properties["access_token"] = facebook.Properties["access_token"];
+			App.Current.MainPage = new MainPageCS(eu, usu,new InicioPage(eu,usu));
 
 		}
 	}

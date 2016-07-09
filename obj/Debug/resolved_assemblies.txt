@@ -23,6 +23,8 @@
 /Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/Xamarin.Forms.Core.dll
 /Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/Xamarin.Forms.Xaml.dll
 /Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/Xamarin.Forms.Platform.dll
+/Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/SQLite.Net.dll
+/Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/SQLite.Net.Platform.XamarinAndroid.dll
 /Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/Inbanker.dll
 /Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/mscorlib.dll
 /Users/jonatas/Projects/ProjetoInbankerXamarin/Droid/obj/Debug/android/assets/System.Runtime.Serialization.dll
