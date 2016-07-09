@@ -29,6 +29,9 @@ namespace Inbanker.Droid
 		ISharedPreferencesEditor editor;
 
 		Usuario eu;
+		AcessoDadosUsuario dadosUsuario;
+		Amigos amigos;
+		AcessoDadosAmigos dadosAmigos;
 
 		protected override void OnElementChanged(ElementChangedEventArgs<Page> e)
 		{
@@ -88,6 +91,21 @@ namespace Inbanker.Droid
 
 			var usu = JsonConvert.DeserializeObject<List<Amigos>>(lista_friends);
 
+			//adicionamos os dados dos amigos ao sqlite
+			dadosAmigos = new AcessoDadosAmigos();
+			dadosAmigos.DeleteAmigos();//para quen nao tenhamos usuarios repitidos na lista de amigos, nos limpamos tudo
+			foreach (var usuarios in usu)
+			{
+				amigos = new Amigos
+				{
+					id = usuarios.id,
+					name = usuarios.name,
+					url_picture = usuarios.picture.data.url,
+				};
+
+				dadosAmigos.InsertAmigos(amigos);
+			}
+
 			//armazenamos dados no sharedpreferences
 			//prefs = PreferenceManager.GetDefaultSharedPreferences(Forms.Context);
 			//editor = prefs.Edit();
@@ -101,7 +119,7 @@ namespace Inbanker.Droid
 			//verify.IsPlayServicesAvailable ();
 
 			//App.Current.Properties["access_token"] = facebook.Properties["access_token"];
-			App.Current.MainPage = new MainPageCS(eu, usu,new InicioPage(eu,usu));
+			App.Current.MainPage = new MainPageCS(new InicioPage());
 
 		}
 	}

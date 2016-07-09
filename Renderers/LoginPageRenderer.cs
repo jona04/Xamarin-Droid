@@ -25,7 +25,7 @@ namespace Inbanker.Droid
 
 		Usuario eu;
 		AcessoDadosUsuario dadosUsuario;
-		AmigosSQLite amigos;
+		Amigos amigos;
 		AcessoDadosAmigos dadosAmigos;
 
 		bool done = false;
@@ -99,9 +99,10 @@ namespace Inbanker.Droid
 
 						//adicionamos os dados dos amigos ao sqlite
 						dadosAmigos = new AcessoDadosAmigos();
+						dadosAmigos.DeleteAmigos();//para quen nao tenhamos usuarios repitidos na lista de amigos, nos limpamos tudo
 						foreach (var usuarios in usu)
 						{
-							amigos = new AmigosSQLite
+							amigos = new Amigos
 							{
 								id = usuarios.id,
 								name = usuarios.name,
@@ -141,7 +142,8 @@ namespace Inbanker.Droid
 
 						//Xamarin.Forms.Application.Current.Properties["access_token"] = eventArgs.Account.Properties["access_token"].ToString();
 
-						Xamarin.Forms.Application.Current.MainPage = new MainPageCS(eu, usu,new InicioPage(eu, usu));
+						Page page = new InicioPage();
+						Xamarin.Forms.Application.Current.MainPage = new MainPageCS(page);
 
 					}
 					else
